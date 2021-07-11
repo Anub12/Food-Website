@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Food Website</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!---we had linked our css file----->
+
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .full-page {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    
+    a {
+        text-decoration: none;
+        color: palevioletr;
+        font-size: 28px;
+    }
+
+    
+    .form-box {
+        width: 380px;
+        height: 480px;
+        position: relative;
+        margin: 2% auto;
+        background: white;
+        padding: 10px;
+        overflow: hidden;
+    }
+    
+    .button-box {
+        width: 220px;
+        margin: 35px auto;
+        position: relative;
+        box-shadow: 0 0 20px 9px #ff61241f;
+        border-radius: 30px;
+    }
+    
+    .toggle-btn {
+        padding: 10px 30px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+    }
+    
+    #btn {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 110px;
+        height: 100%;
+        background: #4bee00;
+        border-radius: 30px;
+        transition: .5s;
+    }
+    
+    .input-group-login {
+        top: 150px;
+        position: absolute;
+        width: 280px;
+        transition: .5s;
+    }
+    
+    .input-group-register {
+        top: 120px;
+        position: absolute;
+        width: 280px;
+        transition: .5s;
+    }
+    
+    .input-field {
+        width: 100%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid #999;
+        outline: none;
+        background: transparent;
+    }
+    
+    .submit-btn {
+        width: 85%;
+        padding: 10px 30px;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        background: #4bee00;
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+    }
+    
+    .check-box {
+        margin: 30px 10px 34px 0;
+    }
+    
+    span {
+        color: black;
+        font-size: 12px;
+        bottom: 68px;
+        position: absolute;
+    }
+    
+    #login {
+        left: 50px;
+    }
+    
+    #login input {
+        color: black;
+        font-size: 15;
+    }
+    
+    #register {
+        left: 450px;
+    }
+    
+    #register input {
+        color: black;
+        font-size: 15;
+    }
+</style>
+
+<body>
+    <header class="topbar">
+        <div class="container flex justify-between items-center">
+            <div class="icons">
+                <a href="https://www.facebook.com/" target="_blank"><img src="./icons/facebook.svg" alt=""></a>
+                <a href="https://twitter.com/?lang=en" target="_blank"><img src="./icons/twitter.svg" alt=""></a>
+                <a href="https://mail.google.com/" target="_blank"><img src="./icons/google.svg" alt=""></a>
+                <a href="https://www.instagram.com/accounts/login/" target="_blank"><img src="./icons/instagram.svg" alt=""></a>
+            </div>
+            <div class="auth flex items-center">
+                <div>
+                    <img src="https://img.icons8.com/office/30/000000/home--v2.png" alt=""></a>
+                    <a href="./Index.html">Home</a>
+                </div>
+                <!-- <div>
+                    <img src="./icons/user-icon.svg" alt="">
+                    <a href="./login.html">Log in</a>
+                </div>
+                <span class="divider">|</span>
+                <div>
+                    <img src="./icons/edit.svg" alt="">
+                    <a href="#">Register Now</a>
+                </div>
+                <span class="divider">|</span>
+                <div>
+                    <img src="./icons/cart.svg" alt="">
+                    <a href="#">0 Items - ($0.00)</a>
+                </div>
+            </div> -->
+            </div>
+        </div>
+    </header>
+    <!-- <div class="hero">
+        <div class="form-box"></div>
+    </div> -->
+    <div class="full-page" style="background-image: url(./images/banner.jpg);">
+        <div id="login-form" class="login-page">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" onclick="login()" class="toggle-btn">Log In</button>
+                    <button type="button" onclick="register()" class="toggle-btn">Register</button>
+                </div>
+                <form id="login" action="login.php" method="GET" class="input-group-login">
+                    <input type="text" name="email" class="input-field" placeholder="Email Id" required>
+                    <input type="password" name="password" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+                <form id="register" class="input-group-register">
+                    <input type="text" class="input-field" placeholder="First Name" required>
+                    <input type="text" class="input-field" placeholder="Last Name " required>
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                    <input type="password" class="input-field" placeholder="Confirm Password" required>
+                    <input type="checkbox" class="check-box"><span>I agree to the terms and conditions</span>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
